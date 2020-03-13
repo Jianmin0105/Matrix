@@ -31,6 +31,7 @@ public class MainFragment extends Fragment implements OnMapReadyCallback {
     private View view;
     private GoogleMap googleMap;
     private LocationTracker locationTracker;
+    private ReportDialog dialog;
 
     public static MainFragment newInstance() {
         Bundle args = new Bundle();
@@ -62,6 +63,8 @@ public class MainFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void onClick(View v) {
                 //show dialog
+                showDialog(null, null);
+
             }
         });
 
@@ -97,6 +100,12 @@ public class MainFragment extends Fragment implements OnMapReadyCallback {
         super.onLowMemory();
         mapView.onLowMemory();
     }
+    private void showDialog(String label, String prefillText) {
+        dialog = new ReportDialog(getContext());
+        dialog.show();
+    }
+
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
