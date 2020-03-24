@@ -216,28 +216,28 @@ public class MainFragment extends Fragment implements OnMapReadyCallback, Report
         googleMap.addMarker(marker);
         loadEventInVisibleMap();
 
-        double latitude = 17.385044;
-        double longitude = 78.486671;
-
-        // Create marker on google map
-        marker = new MarkerOptions().position(
-                new LatLng(latitude, longitude)).title("This is your focus");
-
-        // Change marker Icon on google map
-        marker.icon(BitmapDescriptorFactory
-                .defaultMarker(BitmapDescriptorFactory.HUE_ROSE));
+//        double latitude = locationTracker.getLatitude();,
+//        double longitude = locationTracker.getLongitude();
+//
+//        // Create marker on google map
+//        marker = new MarkerOptions().position(
+//                new LatLng(latitude, longitude)).title("This is your focus");
+//
+//        // Change marker Icon on google map
+//        marker.icon(BitmapDescriptorFactory
+//                .defaultMarker(BitmapDescriptorFactory.HUE_ROSE));
 
         // Add marker to google map
         googleMap.addMarker(marker);
 
 
         // Set up camera configuration, set camera to latitude = 17.385044, longitude = 78.486671, and set Zoom to 12
-        cameraPosition = new CameraPosition.Builder()
-                .target(new LatLng(latitude, longitude)).zoom(12).build();
+//        cameraPosition = new CameraPosition.Builder()
+//                .target(new LatLng(latitude, longitude)).zoom(12).build();
 
         // Animate the zoom process
-        googleMap.animateCamera(CameraUpdateFactory
-                .newCameraPosition(cameraPosition));
+//        googleMap.animateCamera(CameraUpdateFactory
+//                .newCameraPosition(cameraPosition));
 
     }
 
