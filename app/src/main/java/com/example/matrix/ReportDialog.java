@@ -2,6 +2,7 @@ package com.example.matrix;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,10 @@ public class ReportDialog extends Dialog {
     private ImageView mEventTypeImg;
     private TextView mTypeTextView;
     private DialogCallBack mDialogCallBack;
+
+    public void updateImage(Bitmap imageBitmap) {
+        mImageCamera.setImageBitmap(imageBitmap);
+    }
 
     interface DialogCallBack {
         void onSubmit(String editString, String event_type);
@@ -139,6 +144,13 @@ public class ReportDialog extends Dialog {
                 mViewSwitcher.showPrevious();
             }
         });
+        mImageCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDialogCallBack.startCamera();
+            }
+        });
+
 
     }
 
