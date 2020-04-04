@@ -228,7 +228,7 @@ public class MainFragment extends Fragment implements OnMapReadyCallback, Report
 //                .defaultMarker(BitmapDescriptorFactory.HUE_ROSE));
 
         // Add marker to google map
-        googleMap.addMarker(marker);
+        //googleMap.addMarker(marker);
 
 
         // Set up camera configuration, set camera to latitude = 17.385044, longitude = 78.486671, and set Zoom to 12
