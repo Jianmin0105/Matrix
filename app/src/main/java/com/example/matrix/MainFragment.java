@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,6 +85,7 @@ public class MainFragment extends Fragment implements OnMapReadyCallback, Report
     private FirebaseStorage storage;
     private StorageReference storageRef;
     private File destination;
+    private boolean isInfoWindowShown = false;
 
     private BottomSheetBehavior bottomSheetBehavior;
     private ImageView mEventImageLike;
@@ -439,7 +441,15 @@ public class MainFragment extends Fragment implements OnMapReadyCallback, Report
         int likeNumber = mEvent.getEvent_like_number();
 
         String description = mEvent.getEvent_description();
+        //Log.d("marker", description);
         marker.setTitle(description);
+        if (isInfoWindowShown) {
+            marker.hideInfoWindow();
+            isInfoWindowShown = false;
+        } else {
+            marker.showInfoWindow();
+            isInfoWindowShown = true;
+        }
         mEventTextLike.setText(String.valueOf(likeNumber));
         mEventTextType.setText(type);
 
